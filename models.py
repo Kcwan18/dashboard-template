@@ -8,6 +8,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
+    aws_account_id = db.Column(db.String(100))
     url = db.Column(db.String(500))
     api_url = db.Column(db.String(500))
     score = db.Column(db.Integer, default=0)

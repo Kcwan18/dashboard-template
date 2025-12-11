@@ -36,15 +36,15 @@ def create_app():
 def _create_default_users():
     """Create default users if they don't exist"""
     default_users = [
-        ('user1', 'password123'),
-        ('user2', 'password123'),
-        ('user3', 'password123'),
-        ('user4', 'password123')
+        ('user1', 'password123', '123456789012'),
+        ('user2', 'password123', '361574505353'),
+        ('user3', 'password123', '345678901234'),
+        ('user4', 'password123', '456789012345')
     ]
     
-    for username, password in default_users:
+    for username, password, aws_account_id in default_users:
         if not User.query.filter_by(username=username).first():
-            user = User(username=username, password=password)
+            user = User(username=username, password=password, aws_account_id=aws_account_id)
             db.session.add(user)
             print(f"Created default user: {username}")
     

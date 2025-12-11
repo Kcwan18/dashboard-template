@@ -8,9 +8,8 @@ class Config:
     
     # Scoring configuration
     APP_URL_REQUIRED_TEXT = "Unicorn.Rentals Mobile API Service"
-    API_ACCOUNT_ID = "361574505353"
     REQUEST_TIMEOUT = 5
     POINTS_PER_CHECK = 10
-    POINTS_HTTPS = 2  # Points for using HTTPS
-    POINTS_CLOUDFRONT = 10  # Points for CloudFront cache hit
-    CHECK_INTERVAL_SECONDS = 90  # 1.5 minutes
+    POINTS_HTTPS = 5  # Points for using HTTPS
+    POINTS_CLOUDFRONT = 2  # Points for CloudFront cache hit
+    CHECK_INTERVAL_SECONDS = 30  # 1.5 minutes

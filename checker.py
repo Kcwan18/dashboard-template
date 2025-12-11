@@ -77,7 +77,7 @@ class URLChecker:
             if response.status_code == 200:
                 try:
                     data = response.json()
-                    if data.get("account_id") == Config.API_ACCOUNT_ID:
+                    if data.get("account_id") == user.aws_account_id:
                         user.score += Config.POINTS_PER_CHECK
                         URLChecker._add_event(
                             user.id,
