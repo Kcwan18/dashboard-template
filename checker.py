@@ -15,6 +15,28 @@ class URLChecker:
             response = requests.get(user.url, timeout=Config.REQUEST_TIMEOUT)
             
             if response.status_code == 200:
+                # Check for HTTPS
+                if user.url.startswith('https://'):
+                    user.score += Config.POINTS_HTTPS
+                    URLChecker._add_event(
+                        user.id,
+                        f"Application URL using HTTPS (+{Config.POINTS_HTTPS})",
+                        Config.POINTS_HTTPS
+                    )
+                    print(f"✓ User {user.username} - HTTPS bonus! Total: {user.score}")
+                
+                # Check for CloudFront cache hit
+                x_cache_header = response.headers.get('X-Cache', '')
+                if 'Hit from cloudfront' in x_cache_header:
+                    user.score += Config.POINTS_CLOUDFRONT
+                    URLChecker._add_event(
+                        user.id,
+                        f"CloudFront cache hit detected (+{Config.POINTS_CLOUDFRONT})",
+                        Config.POINTS_CLOUDFRONT
+                    )
+                    print(f"✓ User {user.username} - CloudFront cache hit! Total: {user.score}")
+                
+                # Check for required content
                 if Config.APP_URL_REQUIRED_TEXT in response.text:
                     user.score += Config.POINTS_PER_CHECK
                     URLChecker._add_event(

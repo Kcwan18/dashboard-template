@@ -11,4 +11,6 @@ class Config:
     API_ACCOUNT_ID = "361574505353"
     REQUEST_TIMEOUT = 5
     POINTS_PER_CHECK = 10
-    CHECK_INTERVAL_SECONDS = 60
+    POINTS_HTTPS = 2  # Points for using HTTPS
+    POINTS_CLOUDFRONT = 10  # Points for CloudFront cache hit
+    CHECK_INTERVAL_SECONDS = 90  # 1.5 minutes
