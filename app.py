@@ -36,10 +36,10 @@ def create_app():
 def _create_default_users():
     """Create default users if they don't exist"""
     default_users = [
-        ('user1', 'password123', '123456789012'),
-        ('user2', 'password123', '361574505353'),
-        ('user3', 'password123', '345678901234'),
-        ('user4', 'password123', '456789012345')
+        ('competitor1', 'Cdc@2025AUD', '676878928656'),
+        ('competitor2', 'Cdc@2025DKE', '457550570914'),
+        ('competitor3', 'Cdc@2025QUP', '937554351945'),
+        ('competitor4', 'Cdc@2025USD', '211669975908')
     ]
     
     for username, password, aws_account_id in default_users:
