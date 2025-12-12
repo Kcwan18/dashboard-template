@@ -37,9 +37,9 @@ def _create_default_users():
     """Create default users if they don't exist"""
     default_users = [
         ('competitor1', 'Cdc@2025AUD', '676878928656'),
-        ('competitor2', 'Cdc@2025DKE', '457550570914'),
-        ('competitor3', 'Cdc@2025QUP', '937554351945'),
-        ('competitor4', 'Cdc@2025USD', '211669975908')
+        ('competitor3', 'Cdc@2025DKE', '457550570914'),
+        ('competitor4', 'Cdc@2025QUP', '937554351945'),
+        ('competitor5', 'Cdc@2025USD', '211669975908')
     ]
     
     for username, password, aws_account_id in default_users:
